@@ -18,16 +18,11 @@ int getfirstdayoftheyear(int y){
 }
 int main()
 {
-    char *months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    char *months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     int daysmonths[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int i, j, totaldays, weekdays = 0, spacecounter = 0, year;
     printf("Enter a year:\n");
     scanf("%d", &year);
-    if(year < 0){
-    	printf("Invalid Year!");
-    	}
-    	else
-    	{
     green();
     printf("\n\n***************** Welcome to %d *******************\n\n", year);
     reset();
@@ -53,7 +48,6 @@ int main()
         }
         totaldays = daysmonths[i];
         for(j = 1; j <= totaldays; j++){
-        	
             if (weekdays > 4){
                 red();
                 printf("%6d", j);
@@ -72,7 +66,6 @@ int main()
         }
         printf("\n\n");
     }
-   }
 
     return 0;
 }
